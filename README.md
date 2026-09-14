@@ -52,11 +52,17 @@ Although the benefits of hybrid PET/MRI have been demonstrated, the limits of de
 Methodology: We first developed a synthetic MRI cohort using the National Cancer Institute (NCI) Imaging Data Commons (IDC), a cloud-based repository of publicly available, de-identified cancer imaging data, by extracting data from three collections: TCGA-PRAD, PROSTATEx, and QIN-Prostate-RepeatMRI. The cohort was calibrated to published PSMA PET/MRI intraprostatic primary-tumor data from pre-prostatectomy cohorts (Zamboglou 2020, Fendler 2016, Burger 2019, Papp 2021). This was followed by a literature review to identify three parameters from six published PSMA PET/MRI studies spanning three tracers: PSMA-11, DCFPyL, and PSMA-R2. We recorded scanner resolution as FWHM PET scanner spatial resolution reported in each paper (mm); the lesion-to-background ratio (LBR) was calculated from the SUVmean (intrinsic biological contrast independent of lesion size and scanner resolution) of the tumor divided by the SUVmean of background muscle and the background noise fraction (CoV) from image quality data. As the next step, a realistic PET physics model was used to calculate the minimum detectable lesion diameters for each PSMA study scenario, using the Rose criterion (SNR ≥ 3 for possible detection and SNR ≥ 5 for reliable detection). Small lesions are blurred into the surrounding tissue, making them appear less intense. This creates the partial-volume effect; we used a Gaussian point spread function (PSF) to model the blur. We assumed that the PET system's resolution is defined by the full width at half maximum (FWHM), a measure of the width of a signal, spectral line, or distribution, defined as the distance between points on a curve where the amplitude is half its maximum value. We then converted FWHM to standard deviation (σ) and adjusted the lesion signal accordingly. 
 
 Combined realistic SNR equations/parameters (Budinger 1978; Soret 2007): 
+<br>
 Physical model:
+<br>
     FWHM_eff  = √(FWHM_scanner² + FWHM_motion²)   [motion-blurred PSF]    – Equation 3
+    <br>
         RC_3D     = erf(d/2√2σ_eff)³                   [3-D sphere PVE]                               – Equation 4
+        <br>
         N_res     = (d / FWHM_eff)³                     [resolution elements]
+        <br>
         noise_eff = noise_clinical / √N_res             [effective ROI noise]                         – Equation 5
+        <br>
         SNR       = (LBR · RC_3D − 1) / noise_eff                                                     – Equation 6
                   = (LBR · RC_3D − 1) · [(d/FWHM_eff)1.5 / noise_clinical]
 
