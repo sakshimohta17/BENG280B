@@ -7,6 +7,7 @@ In our PET/MRI study, we used MRI for anatomical context to localize prostate le
 Project Goals:  
 Analysis I: Simulate PET lesion detection certainty over MRI Scans  
 Analysis II: Quantitatively evaluate PET contrast recovery as a function of lesion size
+<br>
 Analysis III: Quantify PSMA tracer uptake for PET/MRI imaging and analyze the interplay of parameters like FWHM, LBR, and noise ratio in lesion detectability.
 
 Analysis I Simulations:
