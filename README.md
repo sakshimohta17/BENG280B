@@ -4,8 +4,7 @@ Recent studies show high sensitivity for clinically significant prostate cancer 
 
 In our PET/MRI study, we used MRI for anatomical context to localize prostate lesions and define a realistic lesion size range, employing regions of interest (ROIs), while PET is modeled to detect the smallest lesion size, given its limited spatial resolution (blur) and noise. 
 
-Project Goals: 
-The goal of this project was to quantitatively determine the detectability limits of PET/MRI for detecting small prostate lesions under controlled conditions. 
+Project Goals:  
 Analysis I: Simulate PET lesion detection certainty over MRI Scans  
 Analysis II: Quantitatively evaluate PET contrast recovery as a function of lesion size
 Analysis III: Quantify PSMA tracer uptake for PET/MRI imaging and analyze the interplay of parameters like FWHM, LBR, and noise ratio in lesion detectability.
